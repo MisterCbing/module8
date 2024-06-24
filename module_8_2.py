@@ -11,6 +11,8 @@ def quadratic_equations(a, b, c):
         a, b, c = int(a), int(b), int(c)
     except:
         raise InvalidDataException('Можно вводить только числа!')
+    else:
+        print(f'Ваше квадратное уравнение выглядело так: {a}x² + {b}x + {c} = 0')
     d = int(b) ** 2 - 4 * int(a) * int(c)
     if d < 0:
         raise ProcessingException('Ахтунг, у этого уравнения нет корней!')
@@ -20,6 +22,7 @@ def quadratic_equations(a, b, c):
         x1 = (-b + d ** 0.5) / (2 * a)
         x2 = (-b - d ** 0.5) / (2 * a)
         print(f'Корни этого уравнения: {x1} и {x2}.')
+
 
 # print('Давайте решим квадратное уравнение! Принимаются только целые числа.')
 # a = input('Введите старший коэффициент: ')
@@ -35,12 +38,14 @@ def solution(a, b, c):
         quadratic_equations(a, b, c)
     except Exception as e:
         print(f'Капитан, на борту ошибка: {e.message}')
+    finally:
+        print()
 
 print('Пример вызова первой ошибки')
 solution('a', 'b', 'c')
 print('Пример вызова второй ошибки')
-solution(1, 0, 1)
+solution(8, 2, 7)
 print('Пример решения уравнения с одним корнем')
-solution(1, 2, 1)
+solution(2, 4, 2)
 print('Пример решения уравнения с двумя корнями')
-solution(1, 4, 1)
+solution(2, 6, 4)
