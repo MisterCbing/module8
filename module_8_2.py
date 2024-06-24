@@ -1,10 +1,10 @@
 class InvalidDataException(Exception):
     def __init__(self, message):
-        self.message = message
+        self.message = 'InvalidDataException' + '. ' + message
 
 class ProcessingException(Exception):
     def __init__(self, message):
-        self.message = message
+        self.message = 'ProcessingException' + '. ' + message
 
 def quadratic_equations(a, b, c):
     try:
